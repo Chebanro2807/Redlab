@@ -63,7 +63,7 @@
                         &:before {
                         content: 'Дом';
                         left:3px;
-                        padding: 8px 12px;
+                        padding: 11px 12px;
                         }
 
                         &:after {
@@ -207,4 +207,9 @@
             height: 32px;
             margin-left: 32px;
 		}
+}
+
+.white {
+      background-color: white;
+      transition: background-color .8s;
 }

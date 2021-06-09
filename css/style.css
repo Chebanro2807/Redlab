@@ -231,7 +231,7 @@ button:focus {
 .left__btns-wrap span.switcher input:before {
   content: 'Дом';
   left: 3px;
-  padding: 8px 12px;
+  padding: 11px 12px;
 }
 
 .left__btns-wrap span.switcher input:after {
@@ -377,6 +377,12 @@ button:focus {
   width: 32px;
   height: 32px;
   margin-left: 32px;
+}
+
+.white {
+  background-color: white;
+  -webkit-transition: background-color .8s;
+  transition: background-color .8s;
 }
 
 .main {
@@ -541,6 +547,42 @@ button:focus {
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+
+.features__item.active-scroll-js {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.anim-show {
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 1.6s ease 0s;
+  transition: all 1.6s ease 0s;
+}
+
+.anim-show:nth-child(1) {
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.anim-show:nth-child(2) {
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.anim-show:nth-child(3) {
+  -webkit-transition: all 1.2s ease 0s;
+  transition: all 1.2s ease 0s;
+}
+
+.anim-show.active-scroll-js,
+.active-scroll-js .anim-show {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .cleaning {
