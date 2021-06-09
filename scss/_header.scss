@@ -1,0 +1,146 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1440px;
+    height: 70px;
+    background-color: inherit;
+}
+.left {
+    display: flex;
+    align-items: center;
+    width: 251px;
+    height: 37px;
+    margin: 16px 0px 17px 54px;
+		&__logo {
+            width: 98.56px;
+            height: 25px;
+		}
+
+		&__btns-wrap {
+            display: flex;
+            align-items: center;
+            width: 131px;
+            height: 37px;
+            margin-left: 21px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 48px;
+		}
+
+		&__btn-home {
+            display: flex;
+            align-items: center;
+            width: 55px;
+            height: 31px;
+            padding: 8px 12px;
+            background: #5A30F0;
+            border-radius: 34px;
+            margin: 3px 0px 3px 3px;
+
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 110%;
+
+            color: #FFFFFF;
+            cursor: pointer;
+		}
+
+		&__btn-office {
+            display: flex;
+            align-items: center;
+            width: 66px;
+            height: 31px;
+            padding: 8px 12px;
+            border-radius: 34px;
+
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 110%;
+
+            color: #636C81;
+            cursor: pointer;
+		}
+}
+.center {
+		&__menu {
+            display: flex;
+            width: 662px;
+            height: 19px;
+
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.2px;
+
+            color: #404040;
+
+            :not(:first-child){
+                margin-left: 32px;
+            }
+
+            li {
+                cursor: pointer;
+            }
+		}
+}
+.right {
+    display: flex;
+    align-items: center;
+    width: 292px;
+    height: 32px;
+		&__phone {
+            width: 152px;
+            height: 16px;
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.2px;
+
+            color: #404040;
+		}
+
+		&__time {
+            position: relative;
+            width: 40px;
+            height: 16px;
+            font-family: TT Travels;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.2px;
+            margin-left: 30px;
+
+            color: #404040;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 14px;
+                background: black;
+                position: absolute;
+                top: 2px;
+                left: -15px;
+            }
+		}
+
+		&__slash {
+            width: 32px;
+            height: 32px;
+            margin-left: 32px;
+		}
+}
