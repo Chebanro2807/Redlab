@@ -1,0 +1,50 @@
+.features {
+    padding: 73px 60px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+        position: relative;
+        width: 300px;
+        height: 328px;
+        overflow: hidden;
+        background: #F3F6FB;
+        border-radius: 8px;
+        p {
+            padding: 20px 40px 0px;
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            text-align: center;
+
+            color: #404040;
+        }
+    }
+}
+
+#personal {
+    position: absolute;
+    bottom: 0px;
+    left: 64px;
+}
+
+#chemistry {
+    position: absolute;
+    bottom: 0px;
+    left: 55px;
+}
+
+#quality {
+    position: absolute;
+    bottom: 0px;
+    left: 45px;
+}
+
+#round-the-clock {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}

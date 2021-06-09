@@ -159,6 +159,7 @@ button:focus {
   width: 1440px;
   height: 70px;
   background-color: inherit;
+  z-index: 510;
 }
 
 .left {
@@ -310,4 +311,212 @@ button:focus {
   width: 32px;
   height: 32px;
   margin-left: 32px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 800px;
+}
+
+.main__left {
+  width: 720px;
+  height: 800px;
+}
+
+.main__right {
+  width: 401px;
+  height: 357px;
+  margin: 221px 164px 222px 155px;
+}
+
+.main__right h1 {
+  width: 383px;
+  height: 252px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 76px;
+  line-height: 110%;
+  color: #404040;
+}
+
+.main__right p {
+  width: 397px;
+  height: 75px;
+  margin-top: 30px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 140%;
+  color: #404040;
+}
+
+.oreder-cleaning {
+  position: fixed;
+  top: 585px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 195px;
+  height: 195px;
+  background: #5A30F0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  z-index: 510;
+}
+
+.oreder-cleaning__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 165px;
+  height: 102px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  -webkit-animation: rotating 20s infinite linear;
+  animation: rotating 20s infinite linear;
+}
+
+@-webkit-keyframes rotating {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.features {
+  padding: 73px 60px 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features__item {
+  position: relative;
+  width: 300px;
+  height: 328px;
+  overflow: hidden;
+  background: #F3F6FB;
+  border-radius: 8px;
+}
+
+.features__item p {
+  padding: 20px 40px 0px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  color: #404040;
+}
+
+#personal {
+  position: absolute;
+  bottom: 0px;
+  left: 64px;
+}
+
+#chemistry {
+  position: absolute;
+  bottom: 0px;
+  left: 55px;
+}
+
+#quality {
+  position: absolute;
+  bottom: 0px;
+  left: 45px;
+}
+
+#round-the-clock {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.cleaning {
+  padding: 75px 173px 142px;
+}
+
+.cleaning__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1083px;
+  height: 113px;
+  margin-bottom: 52px;
+}
+
+.cleaning__text h2 {
+  width: 535px;
+  height: 53px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 44px;
+  line-height: 120%;
+  color: #404040;
+}
+
+.cleaning__text p {
+  width: 414px;
+  height: 100px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 140%;
+  color: #404040;
+}
+
+.cleaning__img {
+  width: 1094px;
+  height: 630px;
+  border-radius: 8px;
 }

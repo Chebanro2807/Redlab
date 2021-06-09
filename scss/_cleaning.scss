@@ -1,0 +1,39 @@
+.cleaning {
+    padding: 75px 173px 142px;
+
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        width: 1083px;
+        height: 113px;
+        margin-bottom: 52px;
+        h2 {
+            width: 535px;
+            height: 53px;
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 44px;
+            line-height: 120%;
+            color: #404040;
+        }
+
+        p {
+            width: 414px;
+            height: 100px;
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 140%;
+
+            color: #404040;
+        }
+    }
+
+    &__img {
+        width: 1094px;
+        height: 630px;
+        border-radius: 8px;
+    }
+}

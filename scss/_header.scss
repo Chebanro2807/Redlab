@@ -1,21 +1,22 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1440px;
-    height: 70px;
-    background-color: inherit;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 1440px;
+      height: 70px;
+      background-color: inherit;
+      z-index: 510;
 }
 .left {
-    display: flex;
-    align-items: center;
-    width: 251px;
-    height: 37px;
-    margin: 16px 0px 17px 54px;
+      display: flex;
+      align-items: center;
+      width: 251px;
+      height: 37px;
+      margin: 16px 0px 17px 54px;
 		&__logo {
             width: 98.56px;
             height: 25px;
@@ -86,19 +87,19 @@
             color: #404040;
 
             :not(:first-child){
-                margin-left: 32px;
+                  margin-left: 32px;
             }
 
             li {
-                cursor: pointer;
+                  cursor: pointer;
             }
 		}
 }
 .right {
-    display: flex;
-    align-items: center;
-    width: 292px;
-    height: 32px;
+      display: flex;
+      align-items: center;
+      width: 292px;
+      height: 32px;
 		&__phone {
             width: 152px;
             height: 16px;
@@ -127,14 +128,14 @@
             color: #404040;
 
             &::before {
-                content: '';
-                display: block;
-                width: 1px;
-                height: 14px;
-                background: black;
-                position: absolute;
-                top: 2px;
-                left: -15px;
+                  content: '';
+                  display: block;
+                  width: 1px;
+                  height: 14px;
+                  background: black;
+                  position: absolute;
+                  top: 2px;
+                  left: -15px;
             }
 		}
 

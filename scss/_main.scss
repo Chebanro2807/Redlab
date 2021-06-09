@@ -1,0 +1,90 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+		&__left {
+            width: 720px;
+            height: 800px;
+		}
+
+		&__right {
+            width: 401px;
+            height: 357px;
+            margin: 221px 164px 222px 155px;
+
+            h1 {
+                width: 383px;
+                height: 252px;
+                font-family: "TT Travels";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 76px;
+                line-height: 110%;
+
+                color: #404040;
+            }
+
+            p {
+                width: 397px;
+                height: 75px;
+                margin-top: 30px;
+                font-family: "TT Travels";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 140%;
+
+                color: #404040;
+            }
+		}
+}
+
+.oreder-cleaning {
+    position: fixed;
+    top: 585px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 195px;
+    height: 195px;
+    background: #5A30F0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 510;
+        &__text {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            width: 165px;
+            height: 102px;
+            font-family: "TT Travels";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            
+            -webkit-animation: rotating 20s infinite linear;
+            -moz-animation: rotating 20s infinite linear;
+            -ms-animation: rotating 20s infinite linear;
+            -o-animation: rotating 20s infinite linear;
+            animation: rotating 20s infinite linear;
+        }
+}
+
+@-webkit-keyframes rotating {
+	to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rotating {
+	to { -moz-transform: rotate(360deg); }
+}
+@keyframes rotating {
+	to { transform: rotate(360deg); }
+}
