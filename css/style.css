@@ -194,46 +194,112 @@ button:focus {
   border-radius: 48px;
 }
 
-.left__btn-home {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 55px;
-  height: 31px;
-  padding: 8px 12px;
-  background: #5A30F0;
-  border-radius: 34px;
-  margin: 3px 0px 3px 3px;
-  font-family: "TT Travels";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 110%;
-  color: #FFFFFF;
-  cursor: pointer;
+.left__btns-wrap span.switcher {
+  position: relative;
+  width: 131px;
+  height: 37px;
+  border: 1px solid #E2E8F0;
+  border-radius: 48px;
+  background: #FFFFFF;
+  z-index: 520;
 }
 
-.left__btn-office {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 66px;
-  height: 31px;
-  padding: 8px 12px;
-  border-radius: 34px;
+.left__btns-wrap span.switcher input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 131px;
+  height: 37px;
+  border-radius: 25px;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+  margin: 0px;
+}
+
+.left__btns-wrap span.switcher input:before, .left__btns-wrap span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  color: #5A30F0;
   font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 110%;
+}
+
+.left__btns-wrap span.switcher input:before {
+  content: 'Дом';
+  left: 3px;
+  padding: 8px 12px;
+}
+
+.left__btns-wrap span.switcher input:after {
+  content: 'Офис';
+  right: 3px;
+  padding: 11px 12px;
+}
+
+.left__btns-wrap span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 20px;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input {
+  -webkit-transition: .25s -.1s;
+  transition: .25s -.1s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:checked:before {
+  color: white;
+  -webkit-transition: color .5s .2s;
+  transition: color .5s .2s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:checked:after {
   color: #636C81;
-  cursor: pointer;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:checked + label {
+  left: 3px;
+  right: 60px;
+  width: 55px;
+  height: 30px;
+  background: #5A30F0;
+  -webkit-transition: left .5s, right .4s .2s, width .2s;
+  transition: left .5s, right .4s .2s, width .2s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:not(:checked) {
+  -webkit-transition: background .5s -.1s;
+  transition: background .5s -.1s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:not(:checked):before {
+  color: #636C81;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:not(:checked):after {
+  color: white;
+  -webkit-transition: color .5s .2s;
+  transition: color .5s .2s;
+}
+
+.left__btns-wrap span.switcher.switcher-1 input:not(:checked) + label {
+  left: 60px;
+  right: 10px;
+  width: 66px;
+  height: 30px;
+  background: #5A30F0;
+  -webkit-transition: left .4s .2s, right .5s, background .35s -.1s, width .5s;
+  transition: left .4s .2s, right .5s, background .35s -.1s, width .5s;
 }
 
 .center__menu {

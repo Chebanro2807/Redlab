@@ -31,48 +31,111 @@
             background: #FFFFFF;
             border: 1px solid #E2E8F0;
             border-radius: 48px;
-		}
+            span.switcher {
+                  position: relative;
+                  width:131px;
+                  height:37px;
+                  border: 1px solid #E2E8F0;
+                  border-radius: 48px;
+                  background: #FFFFFF;
+                  z-index: 520;
 
-		&__btn-home {
-            display: flex;
-            align-items: center;
-            width: 55px;
-            height: 31px;
-            padding: 8px 12px;
-            background: #5A30F0;
-            border-radius: 34px;
-            margin: 3px 0px 3px 3px;
+                  input {
+                        appearance: none;
+                        position: relative;
+                        width:131px;
+                        height:37px;
+                        border-radius:25px;
+                        outline:none;
+                        font-family: 'Oswald', sans-serif;
+                        margin: 0px;
 
-            font-family: "TT Travels";
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 110%;
+                        &:before, &:after {
+                        z-index:2;
+                        position: absolute;
+                        color:#5A30F0;
+                        font-family: "TT Travels";
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 110%;
+                        }
+                        &:before {
+                        content: 'Дом';
+                        left:3px;
+                        padding: 8px 12px;
+                        }
 
-            color: #FFFFFF;
-            cursor: pointer;
-		}
+                        &:after {
+                        content: 'Офис';
+                        right:3px;
+                        padding: 11px 12px;
+                        }
+                  }
 
-		&__btn-office {
-            display: flex;
-            align-items: center;
-            width: 66px;
-            height: 31px;
-            padding: 8px 12px;
-            border-radius: 34px;
+                  label {
+                        z-index:1;
+                        position: absolute;
+                        top:3px;
+                        left: 3px;
+                        border-radius:20px;
+                  }
 
-            font-family: "TT Travels";
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 110%;
+                  &.switcher-1 {
+                        input {
+                        transition:.25s -.1s;
+            
+                        &:checked {
+                              &:before {
+                              color: white;
+                              transition: color .5s .2s;
+                              }
 
-            color: #636C81;
-            cursor: pointer;
-		}
+                              &:after {
+                              color: #636C81;;
+                              transition: color .5s;
+                              }
+
+                              &+label {
+                              left:3px;
+                              right:60px;
+                              width: 55px;
+                              height: 30px;
+                              background:#5A30F0;
+                              transition: left .5s, right .4s .2s, width .2s;
+                              }
+                        }
+
+                              &:not(:checked) {
+                              transition: background .5s -.1s;
+
+                              &:before {
+                                    color: #636C81;;
+                                    transition: color .5s;
+                              }
+
+                              &:after {
+                                    color:white;
+                                    transition: color .5s .2s;
+                              }
+
+                              &+label {
+                                    left:60px;
+                                    right:10px;
+                                    width: 66px;
+                                    height: 30px;
+                                    background:#5A30F0;
+                                    transition: left .4s .2s, right .5s, background .35s -.1s, width .5s;
+                              }
+                        }
+                  }
+            }
+      }
+}
+
 }
 .center {
-		&__menu {
+	&__menu {
             display: flex;
             width: 662px;
             height: 19px;
@@ -93,7 +156,7 @@
             li {
                   cursor: pointer;
             }
-		}
+	}
 }
 .right {
       display: flex;
