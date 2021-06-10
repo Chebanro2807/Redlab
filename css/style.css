@@ -434,12 +434,22 @@ button:focus {
   color: #404040;
 }
 
-.oreder-cleaning {
+.oreder-cleaning-wrap {
   position: fixed;
-  top: 585px;
+  top: 435px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+}
+
+.oreder-cleaning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 195px;
   height: 195px;
   background: #5A30F0;
@@ -455,20 +465,19 @@ button:focus {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  z-index: 510;
   -webkit-transition: top 1s, width 1s, height 1s;
   transition: top 1s, width 1s, height 1s;
 }
 
-.oreder-cleaning:hover {
+.oreder-cleaning :hover {
   width: 250px;
   height: 250px;
   -webkit-transition: top 1s, width 1s, height 1s;
   transition: top 1s, width 1s, height 1s;
-  top: 500px;
+  top: 200px;
 }
 
-.oreder-cleaning:hover .oreder-cleaning__text {
+.oreder-cleaning :hover .oreder-cleaning__text {
   -webkit-animation: none;
           animation: none;
 }
@@ -491,6 +500,7 @@ button:focus {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #FFFFFF;
+  cursor: pointer;
   -webkit-animation: rotating 20s infinite linear;
   animation: rotating 20s infinite linear;
   -webkit-transition: font-size 2s;
@@ -508,20 +518,6 @@ button:focus {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-}
-
-.small-circle {
-  width: 176px;
-  height: 176px;
-  top: 87vh;
-  -webkit-transition: width 2s, top 2s, height 2s;
-  transition: width 2s, top 2s, height 2s;
-}
-
-.small-text {
-  font-size: 16px;
-  -webkit-transition: font-size 2s, top 2s;
-  transition: font-size 2s, top 2s;
 }
 
 .features {
