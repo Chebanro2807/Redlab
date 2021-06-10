@@ -1,15 +1,21 @@
 class RedLab {
     constructor () {
         this.header = document.querySelector(".header");
-        window.addEventListener("scroll", this.whiteHeader.bind(this));
+        this.orderRound = document.querySelector(".oreder-cleaning");
+        this.orderText = document.querySelector(".oreder-cleaning__text");
         this.createAppearScrollAnimation();
+        window.addEventListener("scroll", this.scroolDown.bind(this));
     }
 
-    whiteHeader() {
+    scroolDown() {
         if (window.scrollY === 0) {
             this.header.classList.remove("white");
+            this.orderRound.classList.remove("small-circle");
+            this.orderText.classList.remove("small-text");
         } else {
             this.header.classList.add("white");
+            this.orderRound.classList.add("small-circle");
+            this.orderText.classList.add("small-text");
         }
     }
 

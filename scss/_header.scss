@@ -9,6 +9,7 @@
       width: 1440px;
       height: 70px;
       background-color: inherit;
+      transition: background-color .8s;
       z-index: 510;
 }
 .left {
@@ -47,7 +48,6 @@
                         height:37px;
                         border-radius:25px;
                         outline:none;
-                        font-family: 'Oswald', sans-serif;
                         margin: 0px;
 
                         &:before, &:after {
@@ -87,7 +87,30 @@
             
                         &:checked {
                               &:before {
+                              color: #636C81;;
+                              transition: color .5s;
+                              }
+
+                              &:after {
                               color: white;
+                              transition: color .5s .2s;
+                              }
+
+                              &+label {
+                              left:66px;
+                              right:10px;
+                              width: 60px;
+                              height: 30px;
+                              background:#5A30F0;
+                              transition: left .4s .2s, right .5s, background .35s -.1s, width .5s;
+                              }
+                        }
+
+                              &:not(:checked) {
+                              transition: background .5s -.1s;
+
+                              &:before {
+                              color:white;
                               transition: color .5s .2s;
                               }
 
@@ -97,35 +120,12 @@
                               }
 
                               &+label {
-                              left:3px;
-                              right:60px;
-                              width: 55px;
-                              height: 30px;
-                              background:#5A30F0;
-                              transition: left .5s, right .4s .2s, width .2s;
-                              }
-                        }
-
-                              &:not(:checked) {
-                              transition: background .5s -.1s;
-
-                              &:before {
-                                    color: #636C81;;
-                                    transition: color .5s;
-                              }
-
-                              &:after {
-                                    color:white;
-                                    transition: color .5s .2s;
-                              }
-
-                              &+label {
-                                    left:60px;
-                                    right:10px;
-                                    width: 66px;
+                                    left:3px;
+                                    right:60px;
+                                    width: 55px;
                                     height: 30px;
                                     background:#5A30F0;
-                                    transition: left .4s .2s, right .5s, background .35s -.1s, width .5s;
+                                    transition: left .5s, right .4s .2s, width .2s;
                               }
                         }
                   }

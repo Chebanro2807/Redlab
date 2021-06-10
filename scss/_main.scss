@@ -56,6 +56,16 @@
     justify-content: center;
     cursor: pointer;
     z-index: 510;
+    transition: top 1s, width 1s, height 1s;
+    &:hover {
+        width: 250px;
+        height: 250px;
+        transition: top 1s, width 1s, height 1s;
+        top: 500px;
+        .oreder-cleaning__text {
+            animation: none;
+        }
+    }
         &__text {
             display: flex;
             text-align: center;
@@ -76,6 +86,7 @@
             -ms-animation: rotating 20s infinite linear;
             -o-animation: rotating 20s infinite linear;
             animation: rotating 20s infinite linear;
+            transition: font-size 2s;
         }
 }
 
@@ -87,4 +98,16 @@
 }
 @keyframes rotating {
 	to { transform: rotate(360deg); }
+}
+
+.small-circle {
+    width: 176px;
+    height: 176px;
+    top: 87vh;
+    transition: width 2s, top 2s, height 2s;
+}
+
+.small-text {
+    font-size: 16px;
+    transition: font-size 2s, top 2s;
 }
