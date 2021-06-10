@@ -512,6 +512,7 @@ button:focus {
   overflow: hidden;
   background: #F3F6FB;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .features__item p {
@@ -523,6 +524,35 @@ button:focus {
   line-height: 130%;
   text-align: center;
   color: #404040;
+}
+
+.features__hover-el {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: #5A30F0;
+  border-radius: 8px;
+  width: 300px;
+  height: 328px;
+  display: none;
+}
+
+.features__hover-el p {
+  padding: 30px 30px 0px 30px;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+  text-align: left;
+  cursor: pointer;
+}
+
+.features__item:hover .features__hover-el {
+  display: block;
 }
 
 #personal {
