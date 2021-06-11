@@ -1,20 +1,42 @@
 class RedLab {
     constructor () {
         this.header = document.querySelector(".header");
-        this.orderRound = document.querySelector(".oreder-cleaning");
         this.orderText = document.querySelector(".oreder-cleaning__text");
+        this.ball = document.querySelector(".oreder-cleaning__ball");
+        this.ballwrap = document.querySelector(".oreder-cleaning__wrap");
+
+        this.ballwrap.onmousemove = this.moveBall.bind(this);
         this.createAppearScrollAnimation();
         window.addEventListener("scroll", this.scroolDown.bind(this));
+        this.ballwrap.addEventListener("mouseout", this.returnInPozition.bind(this));
+    }
+
+    moveBall(event){
+        let YEvent = event.clientY+202.5-660;
+        let xEvent = event.clientX+202.5-(window.innerWidth/2)
+        let x = xEvent * 100 / this.ballwrap.clientWidth + "%";
+        let y = YEvent * 100 / this.ballwrap.clientHeight + "%";
+        if (Number(x.slice(0, -1)) < 0 || Number(y.slice(0, -1)) < 0) {
+            this.ball.style.cssText = "left: 50%; top: 50%; transform: translate(-50%, -50%);" 
+        }else{
+            this.ball.style.cssText = "left:" + x + "; top:" + y + "; transform: translate(-" + x + ", -" + y + ");" 
+            this.orderText.style.cssText = "left:" + x + "; top:" + y + "; transform: translate(-" + x + ", -" + y + ");" 
+        }
+    }
+
+    returnInPozition () {
+        this.ball.style.cssText = "left: 50%; top: 50%; transform: translate(-50%, -50%);";
+        this.orderText.style.cssText = "";
     }
 
     scroolDown() {
         if (window.scrollY === 0) {
             this.header.classList.remove("white");
-            this.orderRound.classList.remove("small-circle");
+            this.ball.classList.remove("small-circle");
             this.orderText.classList.remove("small-text");
         } else {
             this.header.classList.add("white");
-            this.orderRound.classList.add("small-circle");
+            this.ball.classList.add("small-circle");
             this.orderText.classList.add("small-text");
         }
     }
@@ -58,38 +80,3 @@ class RedLab {
 }
 
 new RedLab();
-
-
-let ball = document.querySelector('.oreder-cleaning');
-let mouseX = 0;
-let mouseY = 0; 
-
-let ballX = 300;
-let ballY = 300; 
-
-let speed = 0.1;
-
-
-function animate() {
-    let distX = mouseX - ballX;
-    let distY = mouseY - ballY;
-
-    ballX = ballX + (distX * speed);
-    ballY = ballY + (distY * speed);
-    
-    if (ballX > 600 || ballX < 0 || ballY > 600 || ballY < 0) {
-        ball.style.cssText = "left: 50%; top: 50%;"
-    } else {
-    ball.style.cssText = "left:" + ballX + "px; top:" + ballY + "px;"
-    }
-    requestAnimationFrame(animate);
-}
-
-
-
-
-document.querySelector('.oreder-cleaning-wrap').addEventListener("mousemove", function(event){
-    mouseX = event.pageX+300-(window.innerWidth/2);
-    mouseY = event.pageY-435;
-    animate();
-})

@@ -41,41 +41,40 @@
 		}
 }
 
-.oreder-cleaning-wrap {
-    position: fixed;
-    top: 435px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-}
-
 .oreder-cleaning {
-    position: absolute;
-    top: 50%;
+    position: fixed;
     left: 50%;
+    top: 660px;
     transform: translate(-50%, -50%);
-    width: 195px;
-    height: 195px;
-    background: #5A30F0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: top 1s, width 1s, height 1s;
+    &__wrap {
+        width: 405px;
+        height: 405px;
+        border-radius: 100%;
+    }
 
-    :hover {
-        width: 250px;
-        height: 250px;
-        transition: top 1s, width 1s, height 1s;
-        top: 200px;
-        .oreder-cleaning__text {
+    &__ball {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 195px;
+        height: 195px;
+        background: #5A30F0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        &:hover{
+            width: 250px;
+            height: 250px;
+            .oreder-cleaning__text {
             animation: none;
+            }
         }
     }
-        &__text {
+
+    &__text {
+            position: absolute;
             display: flex;
             text-align: center;
             align-items: center;
@@ -90,6 +89,7 @@
             text-transform: uppercase;
             color: #FFFFFF;
             cursor: pointer;
+            border-radius: 100%;
             
             -webkit-animation: rotating 20s infinite linear;
             -moz-animation: rotating 20s infinite linear;
@@ -97,8 +97,80 @@
             -o-animation: rotating 20s infinite linear;
             animation: rotating 20s infinite linear;
             transition: font-size 2s;
-        }
+    }
 }
+
+
+// .oreder-cleaning-wrap {
+
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    // text-align: center;
+    // position: fixed;
+    // top: 200px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // width: 600px;
+    // height: 600px;
+// }
+
+// .oreder-cleaning {
+
+    // width: 405px;
+    // height: 405px;
+    // border-radius: 100%;
+    // border: 1px solid black;
+    // display: inline-block;
+    // position: absolute;
+    // top: 80%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // width: 195px;
+    // height: 195px;
+    // background: #5A30F0;
+    // border: 1px solid rgba(255, 255, 255, 0.1);
+    // border-radius: 50%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // cursor: pointer;
+    // transition: top 1s, width 1s, height 1s;
+
+    // :hover {
+    //     width: 250px;
+    //     height: 250px;
+    //     transition: top 1s, width 1s, height 1s;
+    //     top: 200px;
+    //     .oreder-cleaning__text {
+    //         animation: none;
+    //     }
+    //}
+//         __text {
+//             display: flex;
+//             text-align: center;
+//             align-items: center;
+//             width: 165px;
+//             height: 102px;
+//             font-family: "TT Travels";
+//             font-style: normal;
+//             font-weight: 500;
+//             font-size: 18px;
+//             line-height: 130%;
+//             letter-spacing: 0.03em;
+//             text-transform: uppercase;
+//             color: #FFFFFF;
+//             cursor: pointer;
+            
+//             -webkit-animation: rotating 20s infinite linear;
+//             -moz-animation: rotating 20s infinite linear;
+//             -ms-animation: rotating 20s infinite linear;
+//             -o-animation: rotating 20s infinite linear;
+//             animation: rotating 20s infinite linear;
+//             transition: font-size 2s;
+//         }
+// }
 
 @-webkit-keyframes rotating {
 	to { -webkit-transform: rotate(360deg); }
@@ -106,9 +178,16 @@
 @-moz-keyframes rotating {
 	to { -moz-transform: rotate(360deg); }
 }
+@-ms-keyframes rotating {
+	to { -ms-transform: rotate(360deg); }
+}
+@-o-keyframes rotating {
+	to { -o-transform: rotate(360deg); }
+}
 @keyframes rotating {
 	to { transform: rotate(360deg); }
 }
+
 
 // .small-circle {
 //     width: 176px;

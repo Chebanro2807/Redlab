@@ -434,27 +434,21 @@ button:focus {
   color: #404040;
 }
 
-.oreder-cleaning-wrap {
-  position: fixed;
-  top: 435px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-}
-
 .oreder-cleaning {
-  position: absolute;
-  top: 50%;
+  position: fixed;
   left: 50%;
+  top: 660px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 195px;
-  height: 195px;
-  background: #5A30F0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+}
+
+.oreder-cleaning__wrap {
+  width: 405px;
+  height: 405px;
+  border-radius: 100%;
+}
+
+.oreder-cleaning__ball {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -464,25 +458,29 @@ button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
-  -webkit-transition: top 1s, width 1s, height 1s;
-  transition: top 1s, width 1s, height 1s;
+  width: 195px;
+  height: 195px;
+  background: #5A30F0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 100%;
 }
 
-.oreder-cleaning :hover {
+.oreder-cleaning__ball:hover {
   width: 250px;
   height: 250px;
-  -webkit-transition: top 1s, width 1s, height 1s;
-  transition: top 1s, width 1s, height 1s;
-  top: 200px;
 }
 
-.oreder-cleaning :hover .oreder-cleaning__text {
+.oreder-cleaning__ball:hover .oreder-cleaning__text {
   -webkit-animation: none;
           animation: none;
 }
 
 .oreder-cleaning__text {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,6 +499,7 @@ button:focus {
   text-transform: uppercase;
   color: #FFFFFF;
   cursor: pointer;
+  border-radius: 100%;
   -webkit-animation: rotating 20s infinite linear;
   animation: rotating 20s infinite linear;
   -webkit-transition: font-size 2s;
