@@ -22,8 +22,6 @@ class RedLab {
         let xEvent = event.clientX+217.5-(window.innerWidth/2);
         let x = xEvent * 100 / this.ballwrap.clientWidth + "%";
         let y = this.yEvent * 100 / this.ballwrap.clientHeight + "%";
-        console.log(xEvent)
-        console.log(x)
         if (Number(x.slice(0, -1)) < 0 || Number(y.slice(0, -1)) < 0) {
             this.ball.style.cssText = "" 
         }else{
@@ -55,6 +53,19 @@ class RedLab {
             this.orderText.classList.add("small-text");
             this.orderWrap.classList.add("small-wrap");
             this.ball.style.cssText = "top: 86%;";
+        }
+        console.log(window.innerHeight + window.pageYOffset)
+        console.log(document.body.offsetHeight)
+        if ((window.innerHeight + window.pageYOffset) === document.body.offsetHeight) {
+            this.orderWrap.classList.add("hide");
+            this.ball.classList.add("hide");
+            this.orderText.classList.add("hide-text");
+            this.ballwrap.classList.add("hide");
+        } else {
+            this.orderWrap.classList.remove("hide");
+            this.orderText.classList.remove("hide-text");
+            this.ball.classList.remove("hide");
+            this.ballwrap.classList.remove("hide");
         }
     }
 
