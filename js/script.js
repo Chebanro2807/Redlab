@@ -11,12 +11,89 @@ class RedLab {
         this.cleaning__text = document.querySelector(".cleaning__text"); 
         this.cleaning__menu = document.querySelector(".cleaning__menu"); 
 
+        this.places = document.querySelectorAll(".cleaning__item");
+        this.pictures = document.querySelectorAll(".cleaning__img-item");
+        this.places.forEach(place => {
+            place.addEventListener("click", this.addArrow.bind(this, place));
+            place.addEventListener("mouseover", this.showImg.bind(this, place));
+            place.addEventListener("mouseout", this.hideImg.bind(this, place));
+        })
+        this.addArrow(this.places[0]);
+
         this.yEvent = 0;
 
         this.ballwrap.onmousemove = this.moveBall.bind(this);
-        this.createAppearScrollAnimation();
         window.addEventListener("scroll", this.scroolDown.bind(this));
         this.ballwrap.addEventListener("mouseout", this.returnInPozition.bind(this));
+        this.createAppearScrollAnimation();
+    }
+
+    hideImg() {
+        this.cleanImg();
+    }
+
+    showImg(place) {
+        this.cleanImg();
+        for (let i=0; i<this.pictures.length; i++) {
+            this.placeindex = place.getAttribute("data-index");
+            if(Number(this.placeindex) === i) {
+                this.pictures[i].classList.add("show-img");
+            }
+        }
+    }
+
+    cleanImg () {
+        this.pictures.forEach(pict => {
+            pict.classList.remove("show-img");
+        })
+    }
+
+    addArrow(place) {
+        this.changeBg();
+        this.pictures[2].style.cssText = "background-size: cover"
+        this.cleanArrows();
+        place.querySelector("p").style.cssText = "font-style: italic; opacity: 1; left:44px; transition: left 1s;";
+        place.querySelector("div").style.cssText = "left:0; transition: left 1s;";
+        place.style.cssText = "font-style: italic; opacity: 1;";
+    }
+
+    changeBg() {
+        for (let i=0; i<this.pictures.length; i++) {
+            if(Number(this.placeindex) === i) {
+                // if(Number(this.placeindex) === 0){
+                //     this.createPlusForKitchen();
+                // } 
+                // if(Number(this.placeindex) === 2) {
+                //     this.createPlusForBathroom();
+                // }
+                this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning"+i+".png);"
+            }
+        }
+    }
+
+    // createPlusForKitchen() {
+    //     for (let i=0; i<7; i++) {
+    //         let createPlusWrap = document.createElement("div");
+    //         createPlusWrap.classList.add("kitchen-plus-wrap"+i);
+    //         createPlusWrap.classList.add("kitchen-plus-wrap");
+    //         let createPlus = document.createElement("div");
+    //         createPlus.classList.add("kitchen-plus"+i);
+    //         createPlus.classList.add("kitchen-plus");
+    //         createPlus.innerHTML = "+";
+    //         this.cleaning__img.append(createPlus);
+    //         this.cleaning__img.append(createPlusWrap);
+    //     }
+    // }
+
+    createPlusForBathroom() {
+
+    }
+
+    cleanArrows() {
+        this.places.forEach(place => {
+            place.querySelector("p").style.cssText = "font-style: italic; opacity: 1; left:0px; transition: left 1s;";
+            place.querySelector("div").style.cssText = "left:-45px; transition: left 1s;";
+        })
     }
 
     moveBall(event){
@@ -40,7 +117,7 @@ class RedLab {
         if (window.scrollY === 0) {
             this.ball.style.cssText = "left: 50%; top: 50%; transform: translate(-50%, -50%);";
         } else {
-            this.ball.style.cssText = "top: 86%;";
+            this.ball.style.cssText = "top:65%;";
         }
         
         this.orderText.style.cssText = "";
@@ -58,9 +135,10 @@ class RedLab {
             this.ball.classList.add("small-circle");
             this.orderText.classList.add("small-text");
             this.orderWrap.classList.add("small-wrap");
-            this.ball.style.cssText = "top: 86%;";
+            this.ball.style.cssText = "top: 65%;";
         }
         if ((window.innerHeight + window.pageYOffset+2) >= document.body.offsetHeight) {
+            this.header.classList.add("hide-header");
             this.cleaning.classList.add("full-screen");
             this.cleaning__img.classList.add("full-screen__img");
             this.cleaning__text.classList.add("full-screen__text");
@@ -71,6 +149,7 @@ class RedLab {
             this.orderText.classList.add("hide-text");
             this.ballwrap.classList.add("hide");
         } else {
+            this.header.classList.remove("hide-header");
             this.cleaning.classList.remove("full-screen");
             this.cleaning__img.classList.remove("full-screen__img");
             this.cleaning__text.classList.remove("full-screen__text");

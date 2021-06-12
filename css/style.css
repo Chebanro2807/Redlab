@@ -99,6 +99,7 @@ button:focus {
 .container {
   width: 1440px;
   margin: 0px auto;
+  overflow: hidden;
 }
 
 @font-face {
@@ -382,8 +383,14 @@ button:focus {
 
 .white {
   background-color: white;
-  -webkit-transition: background-color .8s;
-  transition: background-color .8s;
+  -webkit-transition: background-color .8s, top .8s;
+  transition: background-color .8s, top .8s;
+}
+
+.hide-header {
+  top: -70px;
+  -webkit-transition: top .8s;
+  transition: top .8s;
 }
 
 .main {
@@ -562,7 +569,7 @@ button:focus {
 }
 
 .features {
-  padding: 73px 60px 75px;
+  padding: 73px 60px 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -686,13 +693,20 @@ button:focus {
 
 .cleaning {
   padding: 75px 173px 142px;
+  position: relative;
+  height: 800px;
 }
 
 .cleaning__menu {
-  display: none;
+  position: absolute;
+  top: 165px;
+  left: -380px;
+  opacity: 0;
   width: 375px;
-  height: 800px;
+  height: 100%;
   background: #5A30F0;
+  -webkit-transition: left 0.5s, opacity 0.5s;
+  transition: left 0.5s, opacity 0.5s;
 }
 
 .cleaning__menu p {
@@ -714,7 +728,15 @@ button:focus {
 }
 
 .cleaning__menu ul li {
-  width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   height: 53px;
   font-family: "TT Travels";
   font-style: normal;
@@ -722,10 +744,42 @@ button:focus {
   font-size: 44px;
   line-height: 120%;
   color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+
+.cleaning__menu ul li div {
+  margin-right: 20px;
+  position: absolute;
+  top: 0px;
+  left: -45px;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+}
+
+.cleaning__menu ul li p {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: auto;
+  height: auto;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 44px;
+  line-height: 120%;
+  color: #FFFFFF;
   opacity: 0.7;
+  margin: 0px;
+  cursor: pointer;
 }
 
 .cleaning__text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,6 +789,9 @@ button:focus {
   width: 1083px;
   height: 113px;
   margin-bottom: 52px;
+  z-index: 610;
+  -webkit-transition: top 2s;
+  transition: top 2s;
 }
 
 .cleaning__text h2 {
@@ -760,9 +817,19 @@ button:focus {
 }
 
 .cleaning__img {
-  width: 1094px;
+  position: absolute;
+  margin: 0 auto;
+  top: 165px;
+  left: 173px;
+  width: calc(100% - 375px);
   height: 630px;
   border-radius: 8px;
+  -webkit-transition: left 2s, top 2s;
+  transition: left 2s, top 2s;
+  background-image: url(/img/cleaning/cleaning0.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .full-screen {
@@ -770,13 +837,16 @@ button:focus {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 800px;
   padding: 0;
 }
 
 .full-screen__img {
-  width: 1065px;
-  height: 800px;
+  top: 0px;
+  left: 375px;
+  height: 100%;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
 }
 
 .full-screen__img img {
@@ -785,9 +855,252 @@ button:focus {
 }
 
 .full-screen__text {
-  display: none;
+  opacity: 0;
+  top: -20%;
+  -webkit-transition: top 2s, opacity 2s;
+  transition: top 2s, opacity 2s;
 }
 
 .full-screen__menu {
-  display: block;
+  top: 0px;
+  opacity: 1;
+  left: 0px;
+  -webkit-transition: left 2s;
+  transition: left 2s;
+}
+
+.cleaning__item:not(:first-child) {
+  margin-top: 22px;
+}
+
+.cleaning__item p:hover {
+  font-style: italic;
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.cleaning__img-item {
+  position: absolute;
+  left: 100%;
+}
+
+.show-img {
+  left: 0%;
+  -webkit-transition: left 2s;
+  transition: left 2s;
+}
+
+.cleaning__kitchen-plus-itemwrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #5A30F0;
+  z-index: 500;
+  border-radius: 100%;
+}
+
+.cleaning__kitchen-plus-item {
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #5A30F0;
+  opacity: 0.2;
+  z-index: 400;
+}
+
+.cleaning__kitchen-plus-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 190px;
+  height: 40px;
+  background: #FFFFFF;
+  padding: 10px;
+  border-radius: 3px;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  font-family: "TT Travels";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 130%;
+  color: #636C81;
+}
+
+.plus-text-1 {
+  top: 190px;
+  left: 680px;
+}
+
+.plus-text-2 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-text-3 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-text-4 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-text-5 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-text-6 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-text-7 {
+  top: 415px;
+  left: 624px;
+}
+
+.plus-itemwrap-1 {
+  position: absolute;
+  top: 247px;
+  left: 746px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-2 {
+  position: absolute;
+  top: 470px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-3 {
+  position: absolute;
+  top: 714px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-4 {
+  position: absolute;
+  top: 470px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-5 {
+  position: absolute;
+  top: 470px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-6 {
+  position: absolute;
+  top: 470px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-7 {
+  position: absolute;
+  top: 470px;
+  left: 700px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-item-1,
+.plus-item-2,
+.plus-item-3,
+.plus-item-4,
+.plus-item-5,
+.plus-item-6,
+.plus-item-7 {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  z-index: 400;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.cleaning__kitchen-plus-itemwrap:hover {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.plus-itemwrap-1:hover .plus-item-1,
+.plus-itemwrap-2:hover .plus-item-2,
+.plus-itemwrap-3:hover .plus-item-3,
+.plus-itemwrap-4:hover .plus-item-4,
+.plus-itemwrap-5:hover .plus-item-5,
+.plus-itemwrap-6:hover .plus-item-6,
+.plus-itemwrap-7:hover .plus-item-7 {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.plus-itemwrap-1:hover + .plus-text-1,
+.plus-itemwrap-2:hover + .plus-text-2,
+.plus-itemwrap-3:hover + .plus-text-3,
+.plus-itemwrap-4:hover + .plus-text-4,
+.plus-itemwrap-5:hover + .plus-text-5,
+.plus-itemwrap-6:hover + .plus-text-6,
+.plus-itemwrap-7:hover + .plus-text-7 {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }

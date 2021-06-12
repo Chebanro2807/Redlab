@@ -211,5 +211,10 @@
 
 .white {
       background-color: white;
-      transition: background-color .8s;
+      transition: background-color .8s, top .8s;
+}
+
+.hide-header {
+      top: -70px;
+      transition: top .8s;
 }
