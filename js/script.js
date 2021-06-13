@@ -18,7 +18,6 @@ class RedLab {
             place.addEventListener("mouseover", this.showImg.bind(this, place));
             place.addEventListener("mouseout", this.hideImg.bind(this, place));
         })
-        this.addArrow(this.places[0]);
 
         this.yEvent = 0;
 
@@ -26,23 +25,25 @@ class RedLab {
         window.addEventListener("scroll", this.scroolDown.bind(this));
         this.ballwrap.addEventListener("mouseout", this.returnInPozition.bind(this));
         this.createAppearScrollAnimation();
+        this.scroolDown();
     }
 
     hideImg() {
         this.cleanImg();
+        this.cleaning__img.classList.remove("img-index");
     }
 
     showImg(place) {
-        this.cleanImg();
-        for (let i=0; i<this.pictures.length; i++) {
-            this.placeindex = place.getAttribute("data-index");
-            if(Number(this.placeindex) === i) {
-                this.pictures[i].classList.add("show-img");
-            }
+        if (place.firstChild.classList.contains("div-show")) {
+            return;
         }
+        this.cleanImg();
+        this.placeIndex = Number(place.getAttribute("data-index"));
+        this.pictures[this.placeIndex].classList.add("show-img");
+        this.cleaning__img.classList.add("img-index");
     }
 
-    cleanImg () {
+    cleanImg() {
         this.pictures.forEach(pict => {
             pict.classList.remove("show-img");
         })
@@ -50,49 +51,50 @@ class RedLab {
 
     addArrow(place) {
         this.changeBg();
-        this.pictures[2].style.cssText = "background-size: cover"
+        this.pictures[2].style.cssText = "background-size: cover";
         this.cleanArrows();
-        place.querySelector("p").style.cssText = "font-style: italic; opacity: 1; left:44px; transition: left 1s;";
-        place.querySelector("div").style.cssText = "left:0; transition: left 1s;";
+        place.querySelector("p").style.cssText = "font-style: italic; opacity: 1; left:54px; transition: left 1s;";
+        place.querySelector("div").classList.add("div-show");
         place.style.cssText = "font-style: italic; opacity: 1;";
+        this.cleanPlus();
+        switch (this.placeIndex) {
+            case 0: this.createPlusForKitchen();
+                break;
+            case 1:
+                break;
+            case 2: this.createPlusForBathroom();
+                break;
+            case 3:
+                break;
+        }
+        this.hideImg();
     }
 
     changeBg() {
-        for (let i=0; i<this.pictures.length; i++) {
-            if(Number(this.placeindex) === i) {
-                // if(Number(this.placeindex) === 0){
-                //     this.createPlusForKitchen();
-                // } 
-                // if(Number(this.placeindex) === 2) {
-                //     this.createPlusForBathroom();
-                // }
-                this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning"+i+".png);"
-            }
-        }
+        this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning"+this.placeIndex+".webp);"
     }
 
-    // createPlusForKitchen() {
-    //     for (let i=0; i<7; i++) {
-    //         let createPlusWrap = document.createElement("div");
-    //         createPlusWrap.classList.add("kitchen-plus-wrap"+i);
-    //         createPlusWrap.classList.add("kitchen-plus-wrap");
-    //         let createPlus = document.createElement("div");
-    //         createPlus.classList.add("kitchen-plus"+i);
-    //         createPlus.classList.add("kitchen-plus");
-    //         createPlus.innerHTML = "+";
-    //         this.cleaning__img.append(createPlus);
-    //         this.cleaning__img.append(createPlusWrap);
-    //     }
-    // }
+    cleanPlus() {
+        document.querySelectorAll(".show-plus").forEach(item => {
+            item.classList.remove("show-plus")});
+    }
+
+    createPlusForKitchen() {
+        document.querySelectorAll(".cleaning__kitchen-plus-itemwrap").forEach(item => {
+            item.classList.add("show-plus");
+        })
+    }
 
     createPlusForBathroom() {
-
+        document.querySelectorAll(".cleaning__bathroom-plus-itemwrap").forEach(item => {
+            item.classList.add("show-plus");
+        })
     }
 
     cleanArrows() {
         this.places.forEach(place => {
-            place.querySelector("p").style.cssText = "font-style: italic; opacity: 1; left:0px; transition: left 1s;";
-            place.querySelector("div").style.cssText = "left:-45px; transition: left 1s;";
+            place.querySelector("p").style.cssText = "opacity: 1; left:0px; transition: left 1s;";
+            place.querySelector("div").classList.remove("div-show");
         })
     }
 
@@ -137,7 +139,7 @@ class RedLab {
             this.orderWrap.classList.add("small-wrap");
             this.ball.style.cssText = "top: 65%;";
         }
-        if ((window.innerHeight + window.pageYOffset+2) >= document.body.offsetHeight) {
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
             this.header.classList.add("hide-header");
             this.cleaning.classList.add("full-screen");
             this.cleaning__img.classList.add("full-screen__img");
@@ -148,6 +150,10 @@ class RedLab {
             this.ball.classList.add("hide");
             this.orderText.classList.add("hide-text");
             this.ballwrap.classList.add("hide");
+            this.cleanPlus();
+            this.addArrow(this.places[0]);
+            this.createPlusForKitchen();
+            this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning0.webp);"
         } else {
             this.header.classList.remove("hide-header");
             this.cleaning.classList.remove("full-screen");
@@ -159,6 +165,8 @@ class RedLab {
             this.orderText.classList.remove("hide-text");
             this.ball.classList.remove("hide");
             this.ballwrap.classList.remove("hide");
+            this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning0.webp);"
+            this.cleanPlus();
         }
     }
 
