@@ -10,6 +10,17 @@ class RedLab {
         this.cleaning__img = document.querySelector(".cleaning__img"); 
         this.cleaning__text = document.querySelector(".cleaning__text"); 
         this.cleaning__menu = document.querySelector(".cleaning__menu"); 
+        this.burgerBtnOpen = document.querySelector(".header-mobile"); 
+        this.burgerBtnClose = document.querySelector(".right__slash div"); 
+
+        this.burgerBtnClose.addEventListener("click", ()=> {
+            this.header.style.cssText = "";
+        })
+        
+
+        this.burgerBtnOpen.addEventListener("click", ()=> {
+            this.header.style.cssText = "top:0px;";
+        })
 
         this.places = document.querySelectorAll(".cleaning__item");
         this.pictures = document.querySelectorAll(".cleaning__img-item");
