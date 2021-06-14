@@ -1372,9 +1372,6 @@ button:focus {
   .cleaning__kitchen-plus {
     display: none;
   }
-}
-
-@media screen and (max-width: 768px) {
   .cleaning {
     display: none;
   }
@@ -1421,6 +1418,9 @@ button:focus {
   .cleaning__img-mobile {
     margin-top: 15px;
   }
+}
+
+@media screen and (max-width: 768px) {
   .main__right {
     background-position: center;
   }
@@ -1437,16 +1437,16 @@ button:focus {
     top: 700px;
   }
   .header {
-    top: -160px;
+    top: -200px;
     background-color: #ffffff;
     -webkit-transition: top 1s;
     transition: top 1s;
-    height: 155px;
+    height: 200px;
   }
   .header-mobile {
     position: fixed;
     width: 100%;
-    height: 155px;
+    height: 95px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1484,5 +1484,25 @@ button:focus {
     font-weight: 500;
     font-size: 14px;
     color: #5A30F0;
+  }
+  .center__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 80px;
+  }
+  .center__menu li {
+    margin: 0px !important;
+    padding: 2px;
+  }
+  .main {
+    margin-top: 95px;
   }
 }
