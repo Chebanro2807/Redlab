@@ -82,7 +82,7 @@ class RedLab {
     }
 
     changeBg() {
-        this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning"+this.placeIndex+".webp);"
+        this.cleaning__img.style.cssText = "background-image: url(img/cleaning/cleaning"+this.placeIndex+".webp);"
     }
 
     cleanPlus() {
@@ -164,7 +164,7 @@ class RedLab {
             this.cleanPlus();
             this.addArrow(this.places[0]);
             this.createPlusForKitchen();
-            this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning0.webp);"
+            this.cleaning__img.style.cssText = "background-image: url(img/cleaning/cleaning0.webp);"
         } else {
             this.header.classList.remove("hide-header");
             this.cleaning.classList.remove("full-screen");
@@ -176,7 +176,7 @@ class RedLab {
             this.orderText.classList.remove("hide-text");
             this.ball.classList.remove("hide");
             this.ballwrap.classList.remove("hide");
-            this.cleaning__img.style.cssText = "background-image: url(/img/cleaning/cleaning0.webp);"
+            this.cleaning__img.style.cssText = "background-image: url(img/cleaning/cleaning0.webp);"
             this.cleanPlus();
         }
     }
